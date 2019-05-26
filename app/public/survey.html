@@ -273,8 +273,10 @@
                         $("#q10").val()
                     ]
                 };
+
+                var currentURL = window.location.origin;
             
-                $.post("/api/friends", userData, function (data) {
+                $.post(currentURL + "/api/friends", userData, function (data) {
                     $("#match-name").text(data.name);
                     $("#match-img").attr("src", data.photo);
                     $("#results-modal").modal("toggle");
